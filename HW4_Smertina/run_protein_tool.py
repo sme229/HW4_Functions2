@@ -42,3 +42,25 @@ def molecular_weight(seq: str) -> int:
             total_mw = sum(aa_weight_dict[a] for a in list_input_seq)
             mw_water_removed = (total_mw - (water_mw * (len(list_input_seq)-1)))
         return mw_water_removed
+def one_to_three_letter(seq: str) -> str:
+
+    """
+    Converts a 1-letter amino acid code sequence into a 3-letter sequence
+            
+    Arguments:
+    - seq (str) sequence to convert, must be 1-letter coded protein sequence
+    Return:
+    - str, a 3-letter coded protein sequence without spaces            
+            
+    """
+    if check_protein_seq(seq) == 'single_letter_prot_seq':
+        aa_code_dict = {'C':'Cys', 'c':'Cys', 'D':'Asp', 'd':'Asp', 'S':'Ser', 's':'Ser', 'Q':'Gln', 'q':'Gln', 
+                 'K':'Lys', 'k':'Lys', 'I':'Ile', 'i':'Ile', 'P':'Pro', 'p':'Pro', 'T':'Thr', 't':'Thr',
+                 'F':'Phe', 'f':'Phe', 'N':'Asn', 'n':'Asn', 'G':'Gly', 'g':'Gly', 'H':'His', 'h':'His',
+                 'L':'Leu', 'l':'Leu', 'R':'Arg', 'r':'Arg', 'W':'Trp', 'w':'Trp', 'A':'Ala', 'a':'Ala', 
+                 'V':'Val', 'v':'Val', 'E':'Glu', 'e':'Glu', 'Y':'Tyr', 'y':'Tyr', 'M':'Met', 'm':'Met'}
+           
+        three_letter_aa = ''
+        for aa in seq:
+            three_letter_aa += aa_code_dict[aa] 
+        return three_letter_aa
