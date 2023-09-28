@@ -24,7 +24,7 @@ run_protein_tool('PEPTIDE', one_to_three_letter)
 ```
 ```
 run_protein_tool('p', 'peptide', one_to_three_letter)
-'Pro', 'ProGluProThrIleAspGlu'
+['Pro', 'ProGluProThrIleAspGlu']
 ```
 3. ```amino_acid_frequency``` This function takes 1-letter coded protein sequence(s) (string), calculates frequency for each unique amino acid and creates a dictionary
 with amino acids as keys and corresponding frequencies as values. Usage example:
