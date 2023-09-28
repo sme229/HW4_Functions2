@@ -7,7 +7,7 @@ using 1-letter amino acid code and can contain any of the following 20 amino aci
 
 The following functions are implemented:
 
-1. ```molecular_weight``` This function takes 1-letter coded protein sequence(s) (string) and calculates molecular weight rounded to integer. The function is not case-sensitive.
+1. ```molecular_weight``` This function takes 1-letter coded protein sequence(s) (string) and calculates molecular weight rounded to integer in g/mol. The function is not case-sensitive.
 Usage examples:
 ```
 run_protein_tool('peptide', molecular_weight)
