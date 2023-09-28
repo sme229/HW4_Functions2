@@ -1,8 +1,9 @@
 # run_protein_tool
 
 ```run_protein_tool``` includes a set of commands that perform various operations with protein or peptide sequences of any length. The input sequence(s) must be written 
-using _1-letter_ amino acid code and can contain any of the following 20 amino acids:
-![aacids](https://github.com/sme229/HW4_Functions2/assets/104040609/64d36f81-ad0a-45d8-8d76-591073d7b7e1)
+using 1-letter amino acid code and can contain any of the following 20 amino acids:
+![aacids](https://github.com/sme229/HW4_Functions2/assets/104040609/825a697f-5562-4829-9771-01e3b519bdee)
+
 
 The following functions are implemented:
 
