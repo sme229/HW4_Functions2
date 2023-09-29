@@ -1,5 +1,15 @@
-# Функция для подсчета частоты аминокислот в белке
-def amino_acid_frequency(seq):
+def amino_acid_frequency(seq: str) -> dict:
+  
+  """
+  Calculates amino acid frequencies
+
+  Arguments:
+  -seq (str) input protein sequence
+  Return:
+  -dictionary with amino acid and its frequency
+  
+  """
+  
   # Словарь для хранения частоты аминокислот
   freq_dict = {}
   # Подсчитываем количество каждой аминокислоты в последовательности
@@ -12,8 +22,19 @@ def amino_acid_frequency(seq):
   for letter in freq_dict:
     freq_dict[letter] = round(freq_dict[letter] / len(seq) * 100, 2)
   return freq_dict
+  
 # Функция для поиска мотивов в белке
-def find_motifs(seq, motif):
+def find_motifs(seq: str, motif: str):
+  
+  """
+  Finds a motif of interest in a protein sequence
+  Arguments:
+  -seq (str) input protein sequence
+  -motif (str) motif to be found in sequence
+  Return:
+  -position(s) of the motif in seq
+  
+  """
   # Список для хранения позиций мотивов в последовательности
   positions = []
   # Ищем мотив в последовательности с помощью скользящего окна
@@ -89,3 +110,38 @@ def one_to_three_letter(seq: str) -> str:
         for aa in seq:
             three_letter_aa += aa_code_dict[aa] 
         return three_letter_aa
+
+from typing import Optional
+def run_protein_tool(*args: str, function: str,  motif: Optional[str]=None):
+
+    """
+    This is the main function
+    Arguments:
+    -seq(str) protein sequence(s)
+    -function(str) specify the function
+    -motif(str), optional argument for find_motifs function
+    Return:
+    -result of the specified function
+
+    """
+    results = []
+    for seq in args:
+            if check_protein_seq(seq) == 'single_letter_prot_seq':
+                if function == 'check_protein_seq':
+                    for seq in args:
+                        results.append(check_protein_seq(seq))
+                elif function == 'molecular_weight':
+                    for seq in args:
+                        results.append(molecular_weight(seq))
+                elif function == 'one_to_three_letter':
+                    for seq in args:
+                        results.append(one_to_three_letter(seq))
+                elif function == 'amino_acid_frequency':
+                    for seq in args:
+                        results.append(amino_acid_frequency(seq))
+                elif function == 'find_motifs':
+                    for seq in args:
+                        results.append(find_motifs(seq, motif))
+            if len(results) == 1:
+                results = results[0]
+            return results
