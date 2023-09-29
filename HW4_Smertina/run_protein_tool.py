@@ -1,3 +1,28 @@
+# Функция для подсчета частоты аминокислот в белке
+def amino_acid_frequency(seq):
+  # Словарь для хранения частоты аминокислот
+  freq_dict = {}
+  # Подсчитываем количество каждой аминокислоты в последовательности
+  for letter in seq:
+    if letter in freq_dict:
+      freq_dict[letter] += 1
+    else:
+      freq_dict[letter] = 1
+  # Преобразуем количество в проценты
+  for letter in freq_dict:
+    freq_dict[letter] = round(freq_dict[letter] / len(seq) * 100, 2)
+  return freq_dict
+# Функция для поиска мотивов в белке
+def find_motifs(seq, motif):
+  # Список для хранения позиций мотивов в последовательности
+  positions = []
+  # Ищем мотив в последовательности с помощью скользящего окна
+  for i in range(len(seq) - len(motif) + 1):
+    window = seq[i:i+len(motif)]
+    if window == motif:
+      positions.append(i+1)
+  return positions
+
 def check_protein_seq(seq: str) -> str:
     
     """
