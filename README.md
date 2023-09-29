@@ -57,8 +57,8 @@ of interest as input after the function name.
 
 # Contributors
 
-Elena Smertina implemented check_protein_seq, molecular_weight and one_to_three_letter functions  
-Natalia Erofeeva implemented amino_acid_frequency and find_motifs functions   
+Elena Smertina implemented check_protein_seq, molecular_weight, one_to_three_letter and run_protein_tool functions;  
+Natalia Erofeeva implemented amino_acid_frequency and find_motifs functions.   
 
 
 
