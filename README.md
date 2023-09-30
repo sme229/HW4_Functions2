@@ -43,7 +43,8 @@ run_protein_tool('MADSEQNQEEAGGGEQREH', function='amino_acid_frequency')
 'H': 5.26}
 ```
 4. ```find_motifs``` This function takes two string arguments: 1-letter coded protein sequence(s) and a motif of interest, where motif is any sequence which occurence 
-will be searched for in the input protein sequence(s). The function returns position(s) of the motif. Usage example:
+will be searched for in the input protein sequence(s). The function returns position(s) of the motif. If a motif was not found, the function will return an empty list.
+Please note that this function can only search for one motif at a time. Usage example:
 
 ```
 find_motifs('MADSEQNQEEAGGGEQREH', function='find_motifs', motif='GG')
