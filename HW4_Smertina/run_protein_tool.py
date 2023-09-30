@@ -139,5 +139,5 @@ def run_protein_tool(*args: str, function: str,  motif: Optional[str]=None):
             results.append(find_motifs(seq, motif))
     if len(results) == 1:
         results = results[0]
-        return results
+    return results
       
